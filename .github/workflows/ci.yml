@@ -65,7 +65,7 @@ jobs:
         fi
         QUAY_IMAGE="quay.io/$IMAGE_REPO/$IMAGE_NAME"
         GHCR_IMAGE="ghcr.io/${{ github.repository }}"
-        VERSION="dev"
+        VERSION="${IMAGE_PREFIX}-dev"
         if [[ '${{ needs.prebuild.outputs.version }}'  != '' ]]; then
           VERSION="${IMAGE_PREFIX}-${{ needs.prebuild.outputs.version }}"
         fi
