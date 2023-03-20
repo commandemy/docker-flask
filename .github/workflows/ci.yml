@@ -51,6 +51,7 @@ jobs:
         IMAGE_NAME=$(basename ${{ github.repository }})
         IMAGE_REPO=${{ github.repository_owner }}
 
+        git fetch --tags
         LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/v//')
         if [ "$GITHUB_REF_NAME" == "v2" ] || [ "$GITHUB_BASE_REF" == "v2" ]; then
           IMAGE_PREFIX="v2"
