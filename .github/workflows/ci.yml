@@ -50,10 +50,10 @@ jobs:
         IMAGE_NAME=$(basename ${{ github.repository }})
         IMAGE_REPO=${{ github.repository_owner }}
 
-        if [[ "$GITHUB_REF_NAME" == "v2"]] || [[ "$GITHUB_BASE_REF" == "v2" ]]; then
+        if "$GITHUB_REF_NAME" == "v2" || "$GITHUB_BASE_REF" == "v2"; then
           IMAGE_PREFIX="v2"
         fi
-        if [[ "$GITHUB_REF_NAME" == "v3"]] || [[ "$GITHUB_BASE_REF" == "v3" ]]; then
+        if "$GITHUB_REF_NAME" == "v3" || "$GITHUB_BASE_REF" == "v3"; then
           IMAGE_PREFIX="v3"
         fi
 
