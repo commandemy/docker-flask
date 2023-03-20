@@ -73,7 +73,7 @@ jobs:
           VERSION="${IMAGE_PREFIX}-nightly"
         fi
         TAGS="${QUAY_IMAGE}:${VERSION},${GHCR_IMAGE}:${VERSION}"
-        if [[ ${{ needs.prebuild.outputs.version }} =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
+        if [[ "${{ needs.prebuild.outputs.version }}" =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
           TAGS="$TAGS,${QUAY_IMAGE}:${IMAGE_PREFIX},${GHCR_IMAGE}:${IMAGE_PREFIX}"
         fi
         echo "settings tag ${TAGS}"
