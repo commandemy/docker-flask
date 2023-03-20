@@ -55,11 +55,15 @@ jobs:
         LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1` | sed 's/v//')
         if [ "$GITHUB_REF_NAME" == "v2" ] || [ "$GITHUB_BASE_REF" == "v2" ]; then
           IMAGE_PREFIX="v2"
-          CURRENT_VERSION=$LATEST_TAG
+          if [ "$GITHUB_REF_NAME" == "v2" ]; then
+            CURRENT_VERSION=$LATEST_TAG
+          fi
         fi
         if [ "$GITHUB_REF_NAME" == "v3" ] || [ "$GITHUB_BASE_REF" == "v3" ]; then
           IMAGE_PREFIX="v3"
-          CURRENT_VERSION=$LATEST_TAG
+          if [ "$GITHUB_REF_NAME" == "v3" ]; then
+            CURRENT_VERSION=$LATEST_TAG
+          fi
         fi
 
         if [[ -n "${{ secrets.IMAGE_NAME }}" ]]; then
