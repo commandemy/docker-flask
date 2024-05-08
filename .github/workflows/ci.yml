@@ -18,7 +18,7 @@ jobs:
       MONDOO_SERVICE_ACCOUNT: "${{ secrets.MONDOO_SERVICE_ACCOUNT }}"
     with:
       dockerfile: Dockerfile
-      score: 50
+      score: 20
       platforms: "linux/amd64, linux/arm64"
       release: true
       
