@@ -1,3 +1,10 @@
+## 1.0.3 (2024-11-05)
+
+#### Bug Fixes
+
+* update python and dockerfile (#9) (018bb1a0)
+
+
 ## 1.0.2 (2024-05-08)
 
 #### Bug Fixes
