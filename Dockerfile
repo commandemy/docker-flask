@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.7-slim
+FROM python:3.12-slim
 
 ENV NAME World
 
@@ -16,7 +16,7 @@ RUN pip install --trusted-host pypi.python.org -r /app/requirements.txt
 EXPOSE 80
 
 # Define environment variable
-ENV NAME World
+ENV NAME=World
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]
